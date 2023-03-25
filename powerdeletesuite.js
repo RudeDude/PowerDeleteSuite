@@ -515,7 +515,8 @@ var pd = {
             r: item.data.subreddit,
             uh: pd.config.uh,
             renderstyle: 'html'
-          }
+          },
+          success: sleep(5100);
         }).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
@@ -527,7 +528,6 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
-        sleep(5100);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
