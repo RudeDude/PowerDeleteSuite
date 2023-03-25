@@ -499,12 +499,6 @@ var pd = {
       }
     },
     edit: function (item) {
-
-      function sleep(ms) {
-          console.log("Called my sleep");
-          return new Promise(resolve => setTimeout(resolve, ms));
-      };
-
       if (pd.performActions) {
         $.ajax({
           url: '/api/editusertext',
@@ -517,13 +511,14 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           },
-          success: function(data, textStatus, jqXHR) { console.log("success");  await new Promise(r => setTimeout(r, 5100)); },
+          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),5100); },
+          error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),5100); }
         }).then(function() {
-          await sleep(5100);
+          setTimeout(console.log("wait... THEN 1"),5100);
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
-          await sleep(5100);
+          setTimeout(console.log("wait... THEN 2"),5100);
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
             item.pdEdited = true;
@@ -531,7 +526,7 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
-        await sleep(5100);
+        setTimeout(console.log("wait... ELSE"),5100);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
