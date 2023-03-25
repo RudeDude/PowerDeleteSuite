@@ -517,7 +517,6 @@ var pd = {
             renderstyle: 'html'
           }
         }).then(function() {
-          sleep(5100);
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
@@ -528,6 +527,7 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
+        sleep(5100);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
