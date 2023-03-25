@@ -508,8 +508,7 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           }
-        }).then(function() {const sleep = ms => new Promise(r => setTimeout(r, 5100));},
-        function() {
+        }).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
