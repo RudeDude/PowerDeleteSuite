@@ -507,11 +507,11 @@ var pd = {
             r: item.data.subreddit,
             uh: pd.config.uh,
             renderstyle: 'html'
-          },
-          success: {await new Promise(r => setTimeout(r, 5100));}
+          }
         }).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
+          await new Promise(r => setTimeout(r, 5100));
         }, function () {
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
