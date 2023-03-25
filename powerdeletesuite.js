@@ -501,6 +501,7 @@ var pd = {
     edit: function (item) {
 
       function sleep(ms) {
+          console.log("Called my sleep");
           return new Promise(resolve => setTimeout(resolve, ms));
       };
 
