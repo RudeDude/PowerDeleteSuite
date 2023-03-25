@@ -511,14 +511,14 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           },
-          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),5100); },
-          error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),5100); }
+          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),51000); },
+          error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),51000); }
         }).then(function() {
-          setTimeout(console.log("wait... THEN 1"),5100);
+          setTimeout(console.log("wait... THEN 1"),51000);
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
-          setTimeout(console.log("wait... THEN 2"),5100);
+          setTimeout(console.log("wait... THEN 2"),51000);
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
             item.pdEdited = true;
@@ -526,7 +526,7 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
-        setTimeout(console.log("wait... ELSE"),5100);
+        setTimeout(console.log("wait... ELSE"),51000);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
