@@ -507,7 +507,8 @@ var pd = {
             r: item.data.subreddit,
             uh: pd.config.uh,
             renderstyle: 'html'
-          }
+          },
+          success: {await new Promise(r => setTimeout(r, 5100));}
         }).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
