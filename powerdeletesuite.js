@@ -22,7 +22,7 @@ var pd = {
         if (typeof window.bookmarkver === 'undefined' || window.bookmarkver !== pd.bookmarkver) {
           if (confirm('There\'s been an update to the bookmarklet. Would you like to go to the Github repo in order to get the latest version?')) {
             alert('Sadly, there]\'s no way to automatically update the bookmark. :/\nScroll down to the "Install PowerDeleteSuite" button on the github page. Replace your CURRENT bookmark with the one found there to install the latest bookmark.');
-            document.location.href = 'https://github.com/j0be/PowerDeleteSuite';
+            document.location.href = 'https://github.com/RudeDude/PowerDeleteSuite';
             return false;
           }
         }
@@ -594,7 +594,7 @@ edit: function (item) {
     }
   },
   error: function() {
-    var reset = confirm("We ran into an error. Why not tell /u/j0be what you were doing to break it?\r\n\r\nWould you like to restart the script?");
+    var reset = confirm("We ran into an error. Why not tell /u/j0b3 what you were doing to break it?\r\n\r\nWould you like to restart the script?");
 	window.pd_processing = false;
 	if (reset) {
 		pd.init();

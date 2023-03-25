@@ -18,6 +18,8 @@
  6. You can do an export of all the content you filter, whether or not you're deleting or editing!
  7. It pulls the latest version from github, so whenever I add new features or fix bugs, you have it instantly!
  8. It was built by /u/j0be, a well known reddit user with a long reddit history and moderates several large subreddits. This means you don't just have to implicitly trust "some random person you can't track down." *\*ahem, reddit overwrite\**
+ 9. This FORK from https://github.com/lyr1cx/PowerDeleteSuiteto include the Timer / Timeout / Delay to try and avoid the rate limit.
+ 10. Further, I've changed URL references to /u/j0be to reference THIS repo instead.
 
 ## Screenshots
  
@@ -25,7 +27,7 @@
  
 ## Installation 
  
- [![Install PowerDeleteSuite](https://i.imgur.com/c0s8Mm2.png)](https://codepen.io/j0be/full/WMBWOW/)
+ [![Install PowerDeleteSuite](https://i.imgur.com/c0s8Mm2.png)](https://codepen.io/RudeDude/full/WMBWOW/)
  
 ## Bugs / Issues?
  
