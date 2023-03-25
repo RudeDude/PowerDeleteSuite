@@ -514,7 +514,7 @@ var pd = {
           success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),510000); },
           error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),51000); }
         }).then(function() {
-          setTimeout(console.log("wait... THEN 1"),51000);
+          setTimeout(console.log("wait... THEN 1"),5100000);
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
