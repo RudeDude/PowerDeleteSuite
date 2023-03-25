@@ -499,6 +499,11 @@ var pd = {
       }
     },
     edit: function (item) {
+
+      function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+      };
+
       if (pd.performActions) {
         $.ajax({
           url: '/api/editusertext',
