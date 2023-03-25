@@ -508,10 +508,10 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           }
-        }).then(function() {
+        }).then(function() {const sleep = ms => new Promise(r => setTimeout(r, 5100));},
+        function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
-          await new Promise(r => setTimeout(r, 5100));
         }, function () {
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
