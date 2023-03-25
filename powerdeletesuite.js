@@ -511,7 +511,7 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           },
-          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),51000); },
+          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),510000); },
           error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),51000); }
         }).then(function() {
           setTimeout(console.log("wait... THEN 1"),51000);
