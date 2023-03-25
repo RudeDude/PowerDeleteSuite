@@ -517,7 +517,7 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           },
-          success: sleep(5100);
+          success: function(data, textStatus, jqXHR) { console.log("success");  return new Promise(resolve => setTimeout(resolve, 5100));},
         }).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
