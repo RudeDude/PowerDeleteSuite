@@ -519,9 +519,11 @@ var pd = {
           },
           success: function(data, textStatus, jqXHR) { console.log("success");  await new Promise(r => setTimeout(r, 5100)); },
         }).then(function() {
+          await sleep(5100);
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
+          await sleep(5100);
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
             item.pdEdited = true;
@@ -529,6 +531,7 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
+        await sleep(5100);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
