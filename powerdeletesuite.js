@@ -2,6 +2,9 @@ var pd = {
   version: '1.4.8',
   bookmarkver: '1.4',
   init : function() {
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    };
     pd.checks.versions();
     if (window.pd_processing !== true) {
       if (pd.checks.location()) {
