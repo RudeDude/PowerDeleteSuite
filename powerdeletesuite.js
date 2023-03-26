@@ -510,15 +510,14 @@ var pd = {
             r: item.data.subreddit,
             uh: pd.config.uh,
             renderstyle: 'html'
-          },
-          success: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... success"),510000); },
-          error: function(data, textStatus, jqXHR) { setTimeout(console.log("wait... err"),51000); }
+          }
         }).then(function() {
-          setTimeout(console.log("wait... THEN 1"),5100000);
+          const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+          async function thing() { await sleepNow(5100); console.log("wait... THEN1")};
+          thing();
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
-          setTimeout(console.log("wait... THEN 2"),51000);
           pd.task.info.errors++;
           if (! confirm('Error editing '+(item.kind == 't3' ? 'post':'comment')+', would you like to retry?')) {
             item.pdEdited = true;
@@ -526,7 +525,6 @@ var pd = {
           pd.actions.children.handleSingle();
         });
       } else {
-        setTimeout(console.log("wait... ELSE"),51000);
         pd.task.items[0].pdEdited = true;
         pd.actions.children.handleSingle();
       }
