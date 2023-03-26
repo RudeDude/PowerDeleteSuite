@@ -360,6 +360,9 @@ var pd = {
             t: pd.task.paths.timeframes[0],
           }
         }).then(function(resp) {
+          const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+          async function thing() { await sleepNow(5100); console.log("wait... THEN1")};
+          thing();
           if (resp.data) {
             var children = resp.data.children;
             pd.task.info.donePages ++;
@@ -512,9 +515,6 @@ var pd = {
             renderstyle: 'html'
           }
         }).then(function() {
-          const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
-          async function thing() { await sleepNow(5100); console.log("wait... THEN1")};
-          thing();
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
